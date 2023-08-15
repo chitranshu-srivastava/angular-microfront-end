@@ -1,0 +1,110 @@
+<nav [class.active]="isActive && !showSubMenus" id="sidebar">
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a routerLink="">
+          <span class="material-symbols-outlined icons"> home </span>
+          <span class="menu-underline">Home</span>
+        </a>
+      </li>
+   
+      <li>
+        <a
+          href="#misc"
+          data-bs-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle menu-dropdown"
+          (click)="toggleDropdown()"
+        >
+          <span class="material-symbols-outlined icons"> photo_library </span>
+          <span class="menu-underline">Miscellaneous</span></a
+        >
+        <ul class="collapse list-unstyled" id="misc">
+          <div class="dropdown-divider"></div>
+          <li>
+            <a
+              class="submenu-link"
+              (click)="subMenuClicked('home/miscellaneous/page1')"
+              ><span class="submenu-underline">Page 1</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="submenu-link"
+              (click)="subMenuClicked('home/miscellaneous/page2')"
+              ><span class="submenu-underline">Page 2</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="submenu-link"
+              (click)="subMenuClicked('home/miscellaneous/page3')"
+              ><span class="submenu-underline">Page 3</span></a
+            >
+          </li>
+        </ul>
+      </li>
+  
+      <li>
+        <a
+          href="#admin"
+          data-bs-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle menu-dropdown"
+          (click)="toggleDropdown()"
+        >
+          <span class="material-symbols-outlined icons">
+            supervised_user_circle
+          </span>
+          <span class="menu-underline">Admin</span></a
+        >
+        <ul class="collapse list-unstyled" id="admin">
+          <div class="dropdown-divider"></div>
+          <li>
+            <a class="submenu-link" (click)="subMenuClicked('home/admin/page1')"
+              ><span class="submenu-underline">Page 1</span></a
+            >
+          </li>
+          <li>
+            <a class="submenu-link" (click)="subMenuClicked('home/admin/page2')"
+              ><span class="submenu-underline">Page 2</span></a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a
+          href="#security"
+          data-bs-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle menu-dropdown"
+          (click)="toggleDropdown()"
+        >
+          <span class="material-symbols-outlined icons"> flag </span>
+          <span class="menu-underline">Security</span>
+        </a>
+        <ul class="collapse list-unstyled" id="security">
+          <div class="dropdown-divider"></div>
+          <li>
+            <a
+              class="submenu-link"
+              (click)="subMenuClicked('home/security/page1')"
+              ><span class="submenu-underline">Page 1</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="submenu-link"
+              (click)="subMenuClicked('home/security/page2')"
+              ><span class="submenu-underline">Page 2</span></a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div
+      (click)="toggleSideBar()"
+      class="toggleSidebar"
+      [class.rotated]="isActive && !showSubMenus"
+    ></div>
+  </nav>
+  
